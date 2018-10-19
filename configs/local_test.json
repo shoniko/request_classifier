@@ -1,0 +1,23 @@
+{
+    "input": {
+        "train_dataset_path": "../abp-request-dataset/dataset_5gb/result_train.tfrecords",
+        "eval_dataset_path": "../abp-request-dataset/dataset_5gb/result_eval.tfrecords",
+        "predict_dataset_path": "../abp-request-dataset/dataset_5gb/result_test.tfrecords",
+        "compression": "ZLIB",
+        "type": "tfrecords",
+        "alphabet": "abcdefghijklmnopqrstuvwxyz1234567890:/?=+."
+    },
+    "network": "dnn_classifier_estimator",
+    "network_config": {
+        "fc_layers": [256, 128, 64],
+        "threshold": 0.9,
+        "dropout": 0.5
+    },
+    "batch_size": 4096,
+    "epochs": 1000,
+    "train_steps": 10000,
+    "eval_steps": 1000,
+    "learning_rate": 0.0001,
+    "profile_path": "../abp-request-classifier/output/profile",
+    "warm_start_location" : "output/floyd_small_fc/output/dnn_classifier_estimator"
+}

@@ -1,0 +1,20 @@
+{
+    "input": {
+        "train_dataset_path": "/floyd/input/abp-request-dataset/result_train.tfrecords",
+        "eval_dataset_path": "/floyd/input/abp-request-dataset/result_eval.tfrecords",
+        "type": "tfrecords",
+        "compression": "ZLIB",
+        "alphabet": "abcdefghijklmnopqrstuvwxyz1234567890:/?=+."
+    },
+    "network": "dnn_classifier_estimator",
+    "network_config": {
+        "fc_layers": [256, 128, 64],
+        "threshold": 0.9,
+        "dropout": 0.5
+    },
+    "batch_size": 256,
+    "epochs": 1000,
+    "train_steps": 10000,
+    "eval_steps": 1000,
+    "learning_rate": 0.0001
+}

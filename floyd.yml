@@ -1,0 +1,7 @@
+machine: gpu
+input:
+  - source: eyeoolek/datasets/abp-requests-5gb/1
+    destination: abp-request-dataset
+env: tensorflow-1.10
+description: Fully connected test run
+command: python train.py -c configs/floydhub.json
